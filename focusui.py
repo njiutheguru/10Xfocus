@@ -38,8 +38,7 @@ class UserInterface:
     WORK_MIN = Settings.work
     task_text = Settings.task_name
 
-    def __init__(self, About, Resource):
-        self.Resource = Resource
+    def __init__(self, About):
         self.checkmark = None
         self.checks = None
         self.minus = 1
@@ -96,7 +95,7 @@ class UserInterface:
     def logo_canva(self):
         # separator = ttk.Separator(self.window)
         logo_canva = Canvas(self.window, width=900, height=130, bg=TITLE_BG, highlightthickness=2)
-        logo_image = PhotoImage(file=self.Resource("copy1.png"))
+        logo_image = PhotoImage(file=resource_path("copy1.png"))
         logo_canva.create_image(275, 60, image=logo_image)
         logo_canva.create_text(500, 50, text="10Xfocus", font=("Arial", 60, "bold"))
         logo_canva.create_text(520, 100, text="Take Your Focus To The Next Level",
@@ -176,7 +175,7 @@ class UserInterface:
             w += 35
 
         # label.config(image=photo)
-        self.checkmark.create_text(150, 10, text=f"Completed pomodoros: {UserInterface.work_sessions} ",
+        self.checkmark.create_text(150, 10, text=f"Completed pomodoro: {UserInterface.work_sessions} ",
                                    font=("Arial", 15, "bold"), fill="green")
         self.checkmark.grid(row=5, column=0)
         if UserInterface.work_sessions > 71:

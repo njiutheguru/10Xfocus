@@ -88,16 +88,17 @@ class Settings:
 
         default_button = Button(self.settin, text="Reset to default",
                                 bg="powder blue", fg="black",
-                                font=("Arial", 10, "bold"),
-                                pady=5,
+                                font=("Arial", 12, "bold"),
+                                pady=5, padx=5,
                                 command=self.default_values)
 
-        default_button.grid(row=5, column=0)
-        apply_settings = Button(self.settin, font=("Arial", 10, "bold"),
+        default_button.grid(row=5, column=0,columnspan=2, sticky="E")
+        apply_settings = Button(self.settin, font=("Arial", 12, "bold"),
                                 pady=5, bg="powder blue",
                                 text="Apply new settings",
+                                padx=5,
                                 command=self.apply_new_settings)
-        apply_settings.grid(row=5, column=1)
+        apply_settings.grid(row=5, column=1,columnspan=2, sticky="W")
         self.settin.mainloop()
 
     def setting_icon(self):
