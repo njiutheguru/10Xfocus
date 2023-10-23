@@ -134,7 +134,10 @@ class Settings:
             self.work = int(self.work)
             if self.work > 360:
                 messagebox.showerror("Too long duration", "work duration set to 6hrs+ seem unrealistic!")
-                self.work = 25
+                Settings.work = 25
+
+            elif self.work == 0:
+                Settings.work = 25
             else:
                 Settings.work = self.work
         except ValueError:
@@ -151,7 +154,9 @@ class Settings:
             self.short_break = int(self.short_break)
             if self.short_break > 120:
                 messagebox.showerror("Too long duration", "Short break duration set to 2hrs+ seem unrealistic!")
-                self.short_break = 5
+                Settings.short_break = 5
+            elif self.short_break == 0:
+                Settings.short_break = 5
             else:
                 Settings.short_break = self.short_break
         except ValueError:
@@ -168,6 +173,9 @@ class Settings:
             self.long_break = int(self.long_break)
             if self.long_break > 180:
                 messagebox.showerror("Too long duration", "Long break duration set to 3hrs+ seem unrealistic!")
+                Settings.long_break = 20
+
+            elif self.long_break == 0:
                 Settings.long_break = 20
             else:
                 Settings.long_break = self.long_break
