@@ -1,1 +1,3 @@
 # 10Xfocus
+## Executable installation file plus all codes in the master branch...
+### Navigate to the [Main Branch](https://github.com/njiutheguru/10Xfocus/tree/master)
